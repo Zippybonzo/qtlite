@@ -1,12 +1,14 @@
 class Instance {
+    static allInstances = [];
     constructor(instancename, instancetype, instancestate) {
         this.instancename = instancename;
         this.instancetype = instancetype;
         this.instancestate = instancestate;
+        Instance.allInstances.push(this);
     }
 
     startInstance() {
-        // code to start instance
+        // code to restart instance
     }
 
     restartInstance() {
@@ -18,7 +20,10 @@ class Instance {
     }
 
     stopInstance() {
-        // code to stop instance
+        const allinstances = Instance.allInstances.indexOf(this);
+        if (allinstances > -1) {
+            Instance.allInstances.splice(allinstances, 1);
+        }
     }
 
     removeInstance() {
