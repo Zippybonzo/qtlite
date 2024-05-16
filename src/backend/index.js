@@ -1,0 +1,1 @@
+const Instance = require('./instances')
