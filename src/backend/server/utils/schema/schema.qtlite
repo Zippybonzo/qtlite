@@ -1,0 +1,23 @@
+connection {
+    host localhost
+    useport 8080
+    useprotocol http
+}
+
+model user {
+    id int
+    name string
+    email string
+    password string
+    created_at datetime
+    updated_at datetime
+}
+
+model post {
+    id int
+    title string
+    content string
+    user user
+    created_at datetime
+    updated_at datetime
+}
