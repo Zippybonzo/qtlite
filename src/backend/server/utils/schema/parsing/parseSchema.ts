@@ -1,12 +1,23 @@
-const f = require('node:fs');
-function parseSchema(schema) {
+import fs from 'fs';
+
+interface Models {
+    [modelName: string]: {
+        [property: string]: string;
+    };
+}
+
+interface Connection {
+    [property: string]: string;
+}
+
+function parseSchema(schema: string) {
     const lines = schema.split('\n');
-    let currentModel = null;
-    let models = {};
-    let connection = {};
+    let currentModel: string | null = null;
+    let models: Models = {};
+    let connection: Connection = {};
     let inConnectionBlock = false;
 
-    lines.forEach(line => {
+    lines.forEach((line: string) => {
         if (line.trim() === '' || line.trim() === '}') {
             if (inConnectionBlock) {
                 inConnectionBlock = false;
@@ -32,6 +43,9 @@ function parseSchema(schema) {
     return { models, connection };
 }
 
-const schema = f.readFileSync('../schema.qtlite', 'utf-8');
+const formatteddir = __dirname.replace('/parsing', '/');
+const schema = fs.readFileSync(formatteddir + '/schema.qtlite', 'utf-8');
 
-module.exports = parseSchema;
+let parsedschema = parseSchema(schema);
+
+export default parsedschema;

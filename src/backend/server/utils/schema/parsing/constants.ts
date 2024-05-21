@@ -1,7 +1,7 @@
 const string = String
 const int = Number
 const bool = Boolean
-const file = require('src/backend/server/utils/schema/parsing/file.js')
+import file from './file'
 const date = Date
 const datetime = Date
 

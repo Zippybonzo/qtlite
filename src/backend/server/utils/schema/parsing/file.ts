@@ -1,10 +1,9 @@
-const fs = require('fs');
-const util = require('util');
+import fs from 'fs';
+import util from 'util';
 
 class file {
-    constructor(path, content) {
-        this.path = path
-        if (this.createFile(content) = null) {
+    constructor(private path: string, content) {
+        if (this.createFile(content) === null) {
             return;
         }
     }
@@ -32,4 +31,4 @@ class file {
     }
 }
 
-module.exports = file;
+export default file;
