@@ -22,7 +22,8 @@ jobs:
 
     - name: Build Backend
       run: |
-        bun build
+        cd src/backend
+        bun build index.js
   analyze:
     name: Analyze (${{ matrix.language }})
     # Runner size impacts CodeQL analysis time. To learn more, please see:
