@@ -17,7 +17,7 @@ jobs:
 
     - name: Install Packages
       run: |
-        cd backend
+        bun init
         bun install
 
     - name: Build Backend
