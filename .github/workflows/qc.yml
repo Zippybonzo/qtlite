@@ -17,11 +17,11 @@ jobs:
 
     - name: Install Packages
       run: |
+        cd backend
         bun install
 
     - name: Build Backend
       run: |
-        cd backend
         bun build
   analyze:
     name: Analyze (${{ matrix.language }})
