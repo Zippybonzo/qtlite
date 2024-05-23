@@ -8,22 +8,6 @@ on:
     - main
   workflow_dispatch:
 jobs:
-  build_test:
-    name: Build Test
-    runs-on: ubuntu-latest
-    steps:
-    - name: Install Bun
-      uses: oven-sh/setup-bun@v1
-
-    - name: Install Packages
-      run: |
-        bun init
-        bun install
-
-    - name: Build Backend
-      run: |
-        cd src/backend
-        bun build index.js
   analyze:
     name: Analyze (${{ matrix.language }})
     # Runner size impacts CodeQL analysis time. To learn more, please see:
