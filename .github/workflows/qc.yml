@@ -19,8 +19,9 @@ jobs:
       run: |
         bun install
 
-    - name: Build
+    - name: Build Backend
       run: |
+        cd backend
         bun build
   analyze:
     name: Analyze (${{ matrix.language }})
