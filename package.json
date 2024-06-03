@@ -1,7 +1,10 @@
 {
   "devDependencies": {
     "@types/node": "^16.18.97",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "@types/bun": "latest"
   },
-  "type": "module"
+  "type": "module",
+  "name": "qtlite",
+  "module": "index.ts"
 }

@@ -1,0 +1,7 @@
+!qtlite
+[id: 0]
+    name: Hello world!
+    email: hello@world.com
+    password: <randomhash>
+    created_at: 03/04/24 14:32
+    updated_at: 04/05/24 14:16
